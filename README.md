@@ -7,3 +7,5 @@ TODO List:
     - When pinged
     - With a random probability
         - Requires properly setting up Intents to read all messages, not just pings: TODO
+
+I HATE ETHAN
