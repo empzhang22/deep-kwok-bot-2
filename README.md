@@ -6,6 +6,5 @@ TODO List:
 - Upload that model to this bot and use it to respond to messages: TODO
     - When pinged
     - With a random probability
-        - Requires properly setting up Intents to read all messages, not just pings: TODO
+        - ~~Requires properly setting up Intents to read all messages, not just pings~~
 
-I HATE ETHAN
