@@ -15,7 +15,7 @@ GUILD = os.getenv('DISCORD_GUILD')
 # A Client is an object that represents a connection to Discord. A Client handles events, 
 # tracks state, and generally interacts with Discord APIs
 # modified: https://stackoverflow.com/questions/73421068/client-discord-client-typeerror-client-init-missing-1-required-keywor
-client = discord.Client(intents=discord.Intents.default())
+client = discord.Intents(messages=True, guilds=True)
 
 # handles the event when the Client has established a connection to Discord and it has finished 
 # preparing the data that Discord has sent, such as login state, guild and channel data, and more
@@ -46,6 +46,7 @@ async def on_message(message):
     if debug: print(message.content)
     if message.author == client.user:
         return
-    pinghandler.ping_handler(message)
+    if message.content != '' and '<@1186775215892598795>' in message.content:
+        pinghandler.ping_handler(client, message)
 
 client.run(TOKEN)
