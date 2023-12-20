@@ -51,6 +51,6 @@ async def on_message(message):
     if message.author == client.user:
         return
     if message.content != '' and '<@1186775215892598795>' in message.content:
-        pinghandler.ping_handler(client, message)
+        await pinghandler.ping_handler(client, message)
 
 client.run(TOKEN)
