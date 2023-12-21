@@ -11,3 +11,6 @@ messages = ["bozo", "rip", "goofy", "ahh", "yapper"]
 # for message in messages:
 #     file.write(message + '\n')
 # file.close()
+
+# Removing all newline characters
+clean = open('test.txt').read().replace('\n', ' ')
