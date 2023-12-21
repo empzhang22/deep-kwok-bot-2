@@ -1,5 +1,6 @@
 An AI chatbot powered by GPT 2.0, trained to emulate a discord user.
 
+
 TODO List:
 - ~~Use the bot to extract Andrew's messages~~
     - Further optimization/adjustments (for future bots)

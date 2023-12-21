@@ -20,7 +20,7 @@ intent = discord.Intents(messages=True, guilds=True)
 intent.message_content = True
 client = discord.Client(intents=intent)
 
-# handles the event when the Client has established a connection to Discord and it has finished 
+# Asynchronous handler for the event when the Client has established a connection to Discord and it has finished 
 # preparing the data that Discord has sent, such as login state, guild and channel data, and more
 @client.event
 async def on_ready():
@@ -45,6 +45,7 @@ async def on_ready():
         for name in channels:
             print(name)
 
+# Asynchronous handler for the event where a message is sent anywhere in the server
 @client.event
 async def on_message(message):
     if onmessage_debug: print(message.content)
