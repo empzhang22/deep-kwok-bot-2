@@ -10,7 +10,7 @@ gpt2.load_gpt2(sess)
 
 # When prompted, generates text using the original message that mentioned the bot as the foundation 
 # of the next text to be generated
-async def generate_text(message, content):
+async def generate_text(name, message, content):
     print("generating...")
     # Based on testing the generate method uses several relevant parameters:
     #   length: The number of tokens to generate; loosely correlates with the length of the output
@@ -22,7 +22,7 @@ async def generate_text(message, content):
     # Running idea: Since the bot can only generate text given previous statements, we can pass in 
     # whatever prompted the bot as its prefix to generate text around it, creating a giga scuffed bot
     # but a bot that can theoretically still respond
-    context = 'Pretend you are Andrew Kwok. Then, espond to the following message from a discord user in your server: ' + content
+    context = f'Pretend you are {name}. Then, respond to the following message from a discord user in your server: ' + content
     context_len = len(context)
     single_text = gpt2.generate(sess, length=25, temperature=0.9, nsamples=1, batch_size=1, return_as_list=True, prefix=context, include_prefix=False)[0]
     text = single_text[context_len:]
